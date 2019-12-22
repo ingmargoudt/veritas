@@ -1,6 +1,6 @@
-package io.github.ingmargoudt.tester.assertions;
+package io.github.ingmargoudt.veritas.assertions;
 
-import io.github.ingmargoudt.tester.Tester;
+import io.github.ingmargoudt.veritas.Veritas;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +31,7 @@ abstract class Assertion {
     }
 
     protected void reportSuccess() {
-        if (Tester.LOG_PASSED && !customPassMessage.isEmpty()) {
+        if (Veritas.LOG_PASSED && !customPassMessage.isEmpty()) {
             logger.log(Level.INFO, customPassMessage);
         }
     }

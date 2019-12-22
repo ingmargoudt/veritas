@@ -1,4 +1,4 @@
-package io.github.ingmargoudt.tester.assertions;
+package io.github.ingmargoudt.veritas.assertions;
 
 import java.util.logging.Logger;
 

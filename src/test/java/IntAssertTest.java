@@ -1,7 +1,7 @@
-import io.github.ingmargoudt.tester.assertions.IntAssertion;
+import io.github.ingmargoudt.veritas.assertions.IntAssertion;
 import org.junit.jupiter.api.Test;
 
-import static io.github.ingmargoudt.tester.Tester.assertThat;
+import static io.github.ingmargoudt.veritas.Veritas.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

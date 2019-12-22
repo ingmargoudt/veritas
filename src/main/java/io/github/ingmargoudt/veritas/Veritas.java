@@ -1,8 +1,8 @@
-package io.github.ingmargoudt.tester;
+package io.github.ingmargoudt.veritas;
 
-import io.github.ingmargoudt.tester.assertions.IntAssertion;
+import io.github.ingmargoudt.veritas.assertions.IntAssertion;
 
-public class Tester {
+public class Veritas {
 
     public static boolean LOG_PASSED = false;
 
