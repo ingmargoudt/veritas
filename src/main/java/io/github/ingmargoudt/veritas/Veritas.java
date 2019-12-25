@@ -8,6 +8,6 @@ public class Veritas {
 
 
     public static IntAssertion assertThat(int expected){
-       return IntAssertion.of(expected);
+       return new IntAssertion(expected);
     }
 }

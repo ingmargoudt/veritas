@@ -2,109 +2,86 @@ package io.github.ingmargoudt.veritas.assertions;
 
 import java.util.logging.Logger;
 
-public class IntAssertion extends Assertion {
+public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> implements NumericAssertable<IntAssertion, Integer> {
 
     private static final Logger logger = Logger.getLogger("IntAssertion");
 
-    private IntAssertion(int obtained) {
-        this.obtained = obtained;
-    }
-
-    int obtained;
-
-    public static IntAssertion of(int obtained) {
-
-        return new IntAssertion(obtained);
-    }
-
-    public IntAssertion isEqualTo(int expected) {
-        if (expected == obtained) {
-            reportSuccess();
-            return this;
-        }
-        fail("Expected %s to be equal to %s", obtained, expected);
-        return this;
-    }
-
-    public IntAssertion onSucces(String message) {
-        customPassMessage = message;
-        return this;
-    }
-
-    public IntAssertion onFail(String message) {
-        customErrorMessage = message;
-        return this;
+    public IntAssertion(int obtained) {
+        super(obtained);
     }
 
     public IntAssertion isEven() {
-        if (obtained % 2 == 0) {
+        if (actual % 2 == 0) {
             reportSuccess();
-            return this;
+            return self();
         }
-        fail("Expected %s to be even, ", obtained);
-        return this;
+        fail("Expected %s to be even, ", actual);
+        return self();
     }
 
     public IntAssertion isOdd() {
-        if (obtained % 2 != 0) {
+        if (actual % 2 != 0) {
             reportSuccess();
-            return this;
+            return self();
         }
-        fail("Expected %s to be odd ", obtained);
-        return this;
+        fail("Expected %s to be odd ", actual);
+        return self();
     }
 
-    public IntAssertion isSmallerThan(int target) {
-        if (obtained < target) {
+    public IntAssertion isSmallerThan(Integer target) {
+        if (actual < target) {
             reportSuccess();
-            return this;
+            return self();
         }
-        fail("Expected %s to be smaller than %s ", obtained, target);
-        return this;
+        fail("Expected %s to be smaller than %s ", actual, target);
+        return self();
     }
 
-    public IntAssertion isSmallerThanOrEqual(int target) {
-        if (obtained <= target) {
+    public IntAssertion isSmallerThanOrEqual(Integer target) {
+        if (actual <= target) {
             reportSuccess();
-            return this;
+            return self();
         }
-        fail("Expected %s to be smaller than or equal to %s ", obtained, target);
-        return this;
+        fail("Expected %s to be smaller than or equal to %s ", actual, target);
+        return self();
     }
 
-    public IntAssertion isGreaterThan(int target) {
-        if (obtained > target) {
+    public IntAssertion isGreaterThan(Integer target) {
+        if (actual > target) {
             reportSuccess();
-            return this;
+            return self();
         }
-        fail("Expected %s to be greater than %s ", obtained, target);
-        return this;
+        fail("Expected %s to be greater than %s ", actual, target);
+        return self();
     }
 
-    public IntAssertion isGreaterThanOrEqual(int target) {
-        if (obtained >= target) {
+    public IntAssertion isGreaterThanOrEqual(Integer target) {
+        if (actual >= target) {
             reportSuccess();
-            return this;
+            return self();
         }
-        fail("Expected %s to be greater than or equal to %s ", obtained, target);
-        return this;
+        fail("Expected %s to be greater than or equal to %s ", actual, target);
+        return self();
     }
 
-    public IntAssertion isBetween(int lower, int upper) {
-        if (obtained >= lower && obtained <= upper) {
+    public IntAssertion isBetween(Integer lower, Integer upper) {
+        if (actual >= lower && actual <= upper) {
             reportSuccess();
-            return this;
+            return self();
         }
-        fail("Expected %s to be between %s ", obtained, lower, upper);
-        return this;
+        fail("Expected %s to be between %s ", actual, lower, upper);
+        return self();
     }
 
-    public IntAssertion isMultipleOf(int multiplicant) {
-        if (obtained % multiplicant == 0) {
-            reportSuccess();
-            return this;
+    public IntAssertion isMultipleOf(Integer multiplicant) {
+        if(multiplicant == null){
+            throw new NullPointerException("multiplicant can not be null");
         }
-        fail("Expected %s to be a multiple of %s ", obtained, multiplicant);
-        return this;
+        if (actual % multiplicant == 0) {
+            reportSuccess();
+            return self();
+        }
+        fail("Expected %s to be a multiple of %s ", actual, multiplicant);
+        return self();
     }
 }

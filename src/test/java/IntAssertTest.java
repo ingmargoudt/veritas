@@ -69,6 +69,11 @@ public class IntAssertTest
         assertThat(15).isMultipleOf(3);
     }
 
+    @Test
+    public void testNull(){
+      assertThrows(NullPointerException.class, () ->  assertThat(15).isMultipleOf(null));
+    }
+
 
 
 
