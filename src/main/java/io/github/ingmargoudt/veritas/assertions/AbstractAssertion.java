@@ -2,6 +2,7 @@ package io.github.ingmargoudt.veritas.assertions;
 
 import io.github.ingmargoudt.veritas.Veritas;
 
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -63,7 +64,7 @@ abstract class AbstractAssertion<
     }
 
     public SELF_TYPE isEqualTo(ELEMENT_TYPE expected) {
-        if (expected ==  actual) {
+        if (Objects.equals(expected, actual)) {
             reportSuccess();
             return self();
         }
@@ -72,7 +73,7 @@ abstract class AbstractAssertion<
     }
 
     public SELF_TYPE isNotEqualTo(ELEMENT_TYPE expected) {
-        if (expected !=  actual) {
+        if (!Objects.equals(expected, actual)) {
             reportSuccess();
             return self();
         }
