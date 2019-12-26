@@ -15,8 +15,7 @@ public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> imple
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be even, ", actual);
-        return self();
+        return fail("Expected %s to be even, ", actual);
     }
 
     public IntAssertion isOdd() {
@@ -24,8 +23,7 @@ public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> imple
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be odd ", actual);
-        return self();
+        return fail("Expected %s to be odd ", actual);
     }
 
     public IntAssertion isSmallerThan(Integer target) {
@@ -33,8 +31,7 @@ public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> imple
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be smaller than %s ", actual, target);
-        return self();
+        return fail("Expected %s to be smaller than %s ", actual, target);
     }
 
     public IntAssertion isSmallerThanOrEqual(Integer target) {
@@ -42,8 +39,7 @@ public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> imple
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be smaller than or equal to %s ", actual, target);
-        return self();
+        return fail("Expected %s to be smaller than or equal to %s ", actual, target);
     }
 
     public IntAssertion isGreaterThan(Integer target) {
@@ -51,8 +47,7 @@ public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> imple
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be greater than %s ", actual, target);
-        return self();
+        return fail("Expected %s to be greater than %s ", actual, target);
     }
 
     public IntAssertion isGreaterThanOrEqual(Integer target) {
@@ -60,8 +55,7 @@ public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> imple
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be greater than or equal to %s ", actual, target);
-        return self();
+        return fail("Expected %s to be greater than or equal to %s ", actual, target);
     }
 
     public IntAssertion isBetween(Integer lower, Integer upper) {
@@ -69,19 +63,17 @@ public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> imple
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be between %s ", actual, lower, upper);
-        return self();
+        return fail("Expected %s to be between %s ", actual, lower, upper);
     }
 
     public IntAssertion isMultipleOf(Integer multiplicant) {
-        if(multiplicant == null){
+        if (multiplicant == null) {
             throw new NullPointerException("multiplicant can not be null");
         }
         if (actual % multiplicant == 0) {
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be a multiple of %s ", actual, multiplicant);
-        return self();
+        return fail("Expected %s to be a multiple of %s ", actual, multiplicant);
     }
 }

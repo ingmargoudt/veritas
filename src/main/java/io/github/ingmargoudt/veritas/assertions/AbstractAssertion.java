@@ -32,7 +32,7 @@ abstract class AbstractAssertion<
     String customPassMessage = "";
     protected String failMessage;
 
-    protected final <T> void fail(String failMessage, T... args) {
+    protected final <T> SELF_TYPE  fail(String failMessage, T... args) {
         if (!customErrorMessage.isEmpty()) {
             throw new AssertionError(customErrorMessage);
         } else {
@@ -67,8 +67,8 @@ abstract class AbstractAssertion<
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be equal to %s", actual, expected);
-        return self();
+       return fail("Expected %s to be equal to %s", actual, expected);
+
     }
 
     public SELF_TYPE isNotEqualTo(ELEMENT_TYPE expected) {
@@ -76,8 +76,8 @@ abstract class AbstractAssertion<
             reportSuccess();
             return self();
         }
-        fail("Expected %s to be not equal to %s", actual, expected);
-        return self();
+       return fail("Expected %s to be not equal to %s", actual, expected);
+
     }
 
 }
