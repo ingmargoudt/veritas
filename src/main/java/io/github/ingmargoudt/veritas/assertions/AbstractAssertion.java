@@ -31,7 +31,6 @@ abstract class AbstractAssertion<
 
     String customErrorMessage = "";
     String customPassMessage = "";
-    protected String failMessage;
 
     protected final <T> SELF_TYPE  fail(String failMessage, T... args) {
         if (!customErrorMessage.isEmpty()) {
