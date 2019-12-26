@@ -84,6 +84,14 @@ abstract class AbstractAssertion<
         return fail("Expected %s to be null", actual);
     }
 
+    public SELF_TYPE isNotNull(){
+        if(actual != null){
+            reportSuccess();
+            return self();
+        }
+        return fail("Expected %s to be non-null", actual);
+    }
+
     public SELF_TYPE isNotEqualTo(ELEMENT_TYPE expected) {
         if (!Objects.equals(expected, actual)) {
             reportSuccess();
