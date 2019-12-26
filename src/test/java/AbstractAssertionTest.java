@@ -31,6 +31,16 @@ public class AbstractAssertionTest {
     }
 
     @Test
+    public void isNull(){
+        assertThat(null).isNull();
+    }
+
+    @Test
+    public void notIsNull(){
+        assertThrows(AssertionError.class, () -> assertThat(3).isNull());
+    }
+
+    @Test
     public void customMessage() {
         Veritas.LOG_PASSED = true;
         IntegerAssertion success = assertThat(3).onSucces("success");
