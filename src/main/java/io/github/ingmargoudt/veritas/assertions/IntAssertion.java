@@ -6,8 +6,8 @@ public class IntAssertion extends AbstractAssertion<IntAssertion, Integer> imple
 
     private static final Logger logger = Logger.getLogger("IntAssertion");
 
-    public IntAssertion(int obtained) {
-        super(obtained);
+    public IntAssertion(int actual) {
+        super(actual);
     }
 
     public IntAssertion isEven() {

@@ -7,7 +7,7 @@ public class Veritas {
     public static boolean LOG_PASSED = false;
 
 
-    public static IntAssertion assertThat(int expected){
-       return new IntAssertion(expected);
+    public static IntAssertion assertThat(int actual){
+       return new IntAssertion(actual);
     }
 }
