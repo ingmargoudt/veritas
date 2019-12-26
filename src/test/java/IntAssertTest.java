@@ -1,53 +1,24 @@
-import io.github.ingmargoudt.veritas.Veritas;
-import io.github.ingmargoudt.veritas.assertions.IntegerAssertion;
 import org.junit.jupiter.api.Test;
 
 import static io.github.ingmargoudt.veritas.Veritas.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class IntAssertTest {
 
-    @Test
-    public void Integer_isEqualTo() {
-        assertThat(3).isEqualTo(3);
-    }
+    private final Integer nullInteger = null;
 
-    @Test
-    public void Integer_NotisEqualTo() {
-       assertThrows(AssertionError.class, () -> assertThat(3).isNotEqualTo(3));
-    }
 
-    @Test
-    public void Integer_isNotEqualTo() {
-        assertThat(3).isNotEqualTo(5);
-    }
-
-    @Test
-    public void Integer_not_equals() {
-        assertThrows(AssertionError.class, () ->
-        {
-            assertThat(3).isEqualTo(4);
-        });
-    }
-
-    @Test
-    public void Integer_customMessage() {
-        Veritas.LOG_PASSED = true;
-        IntegerAssertion success = assertThat(3).onSucces("success");
-        assertEquals("success", success.getCustomPassMessage());
-        success.isEqualTo(3);
-    }
-
-    @Test
-    public void Integer_customErrorMessage() {
-        IntegerAssertion fail = assertThat(3).onFail("fail");
-        assertEquals("fail", fail.getCustomErrorMessage());
-      }
-
+    /*
+    Tests for IntegerAssertion.isEven
+     */
     @Test
     public void Integer_isEven() {
         assertThat(2).isEven();
+    }
+
+    @Test
+    public void Integer_isEvenActualNull() {
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isEven());
     }
 
     @Test
@@ -55,9 +26,18 @@ public class IntAssertTest {
         assertThrows(AssertionError.class, () -> assertThat(3).isEven());
     }
 
+    /*
+    Tests for IntegerAssertion.isOdd
+     */
+
     @Test
     public void Integer_isOdd() {
         assertThat(3).isOdd();
+    }
+
+    @Test
+    public void Integer_isOddActualNull() {
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isOdd());
     }
 
     @Test
@@ -65,15 +45,33 @@ public class IntAssertTest {
         assertThrows(AssertionError.class, () -> assertThat(4).isOdd());
     }
 
+     /*
+    Tests for IntegerAssertion.isSmallerThan()
+     */
+
     @Test
     public void isSmallerThan() {
         assertThat(3).isSmallerThan(4);
     }
 
     @Test
-    public void isNotSmallerThan(){
+    public void isNotSmallerThan() {
         assertThrows(AssertionError.class, () -> assertThat(3).isSmallerThan(2));
     }
+
+    @Test
+    public void isSmallerThanActualNull() {
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isSmallerThan(10));
+    }
+
+    @Test
+    public void isSmallerThanNull() {
+        assertThrows(NullPointerException.class, () -> assertThat(10).isSmallerThan(nullInteger));
+    }
+
+     /*
+    Tests for IntegerAssertion.isSmallerThanorEqualTo
+     */
 
     @Test
     public void isSmallerEqualTo() {
@@ -87,6 +85,20 @@ public class IntAssertTest {
     }
 
     @Test
+    public void isSmallerThanEqualToActualNull() {
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isSmallerThanOrEqual(10));
+    }
+
+    @Test
+    public void isSmallerThanEqualToNull() {
+        assertThrows(NullPointerException.class, () -> assertThat(10).isSmallerThanOrEqual(nullInteger));
+    }
+
+     /*
+    Tests for IntegerAssertion.isGreaterThan
+     */
+
+    @Test
     public void isGreaterThan() {
         assertThat(4).isGreaterThan(3);
     }
@@ -95,6 +107,22 @@ public class IntAssertTest {
     public void isNotGreaterThan() {
         assertThrows(AssertionError.class, () -> assertThat(4).isGreaterThan(4));
     }
+
+    @Test
+    public void isGreaterThanActualNull() {
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isGreaterThan(3));
+    }
+
+
+    @Test
+    public void isGreaterThanNull() {
+        assertThrows(NullPointerException.class, () -> assertThat(3).isGreaterThan(nullInteger));
+    }
+
+     /*
+    Tests for IntegerAssertion.isGreaterThanEqualTo
+     */
+
 
     @Test
     public void isGreaterThanEqualTo() {
@@ -108,6 +136,20 @@ public class IntAssertTest {
     }
 
     @Test
+    public void isGreaterThanEqualToNullActual(){
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isGreaterThanOrEqual(5));
+    }
+
+    @Test
+    public void isGreaterThanEqualToNull(){
+        assertThrows(NullPointerException.class, () -> assertThat(3).isGreaterThanOrEqual(nullInteger));
+    }
+
+     /*
+    Tests for IntegerAssertion.isBetween
+     */
+
+    @Test
     public void isBetween() {
         assertThat(4).isBetween(3, 5);
     }
@@ -118,20 +160,43 @@ public class IntAssertTest {
     }
 
     @Test
+    public void testInBetweenActualNull() {
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isBetween(1, 10));
+    }
+
+    @Test
+    public void testInBetweenLowerNull() {
+        assertThrows(NullPointerException.class, () -> assertThat(1).isBetween(nullInteger, 10));
+    }
+
+    @Test
+    public void testInBetweenUpperNull() {
+        assertThrows(NullPointerException.class, () -> assertThat(2).isBetween(1, nullInteger));
+    }
+
+     /*
+    Tests for IntegerAssertion.isMultipleOf
+     */
+
+    @Test
     public void isMultipleOf() {
         assertThat(15).isMultipleOf(3);
     }
 
     @Test
     public void isNotMultipleOf() {
-      assertThrows(AssertionError.class, () -> assertThat(15).isMultipleOf(4));
+        assertThrows(AssertionError.class, () -> assertThat(15).isMultipleOf(4));
     }
 
 
     @Test
-    public void testNull() {
-        assertThrows(NullPointerException.class, () -> assertThat(15).isMultipleOf(null));
+    public void testNullMultipleOf() {
+        assertThrows(NullPointerException.class, () -> assertThat(15).isMultipleOf(nullInteger));
     }
 
+    @Test
+    public void testMultipleOfActualNull() {
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isMultipleOf(10));
+    }
 
 }

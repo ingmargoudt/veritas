@@ -9,12 +9,11 @@ import java.util.logging.Logger;
 abstract class AbstractAssertion<
         SELF_TYPE extends AbstractAssertion<SELF_TYPE, ELEMENT_TYPE>,
         ELEMENT_TYPE
-        > implements Assertable<SELF_TYPE, ELEMENT_TYPE>{
+        > implements Assertable<SELF_TYPE, ELEMENT_TYPE> {
 
     private static final Logger logger = Logger.getLogger("Assertion");
 
     protected final ELEMENT_TYPE actual;
-
 
 
     protected AbstractAssertion(ELEMENT_TYPE actual) {
@@ -32,7 +31,7 @@ abstract class AbstractAssertion<
     String customErrorMessage = "";
     String customPassMessage = "";
 
-    protected final <T> SELF_TYPE  fail(String failMessage, T... args) {
+    protected final <T> SELF_TYPE fail(String failMessage, T... args) {
         if (!customErrorMessage.isEmpty()) {
             throw new AssertionError(customErrorMessage);
         } else {
@@ -67,8 +66,14 @@ abstract class AbstractAssertion<
             reportSuccess();
             return self();
         }
-       return fail("Expected %s to be equal to %s", actual, expected);
+        return fail("Expected %s to be equal to %s", actual, expected);
 
+    }
+
+    public void checkIfActualNull() {
+        if (actual == null) {
+            throw new AssertionError("Actual is null");
+        }
     }
 
     public SELF_TYPE isNotEqualTo(ELEMENT_TYPE expected) {
@@ -76,7 +81,7 @@ abstract class AbstractAssertion<
             reportSuccess();
             return self();
         }
-       return fail("Expected %s to be not equal to %s", actual, expected);
+        return fail("Expected %s to be not equal to %s", actual, expected);
 
     }
 
