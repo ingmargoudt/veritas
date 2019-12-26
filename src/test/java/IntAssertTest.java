@@ -1,5 +1,5 @@
 import io.github.ingmargoudt.veritas.Veritas;
-import io.github.ingmargoudt.veritas.assertions.IntAssertion;
+import io.github.ingmargoudt.veritas.assertions.IntegerAssertion;
 import org.junit.jupiter.api.Test;
 
 import static io.github.ingmargoudt.veritas.Veritas.assertThat;
@@ -14,8 +14,13 @@ public class IntAssertTest {
     }
 
     @Test
-    public void Integer_isNotEqualTo() {
+    public void Integer_NotisEqualTo() {
        assertThrows(AssertionError.class, () -> assertThat(3).isNotEqualTo(3));
+    }
+
+    @Test
+    public void Integer_isNotEqualTo() {
+        assertThat(3).isNotEqualTo(5);
     }
 
     @Test
@@ -29,10 +34,16 @@ public class IntAssertTest {
     @Test
     public void Integer_customMessage() {
         Veritas.LOG_PASSED = true;
-        IntAssertion success = assertThat(3).onSucces("success");
+        IntegerAssertion success = assertThat(3).onSucces("success");
         assertEquals("success", success.getCustomPassMessage());
         success.isEqualTo(3);
     }
+
+    @Test
+    public void Integer_customErrorMessage() {
+        IntegerAssertion fail = assertThat(3).onFail("fail");
+        assertEquals("fail", fail.getCustomErrorMessage());
+      }
 
     @Test
     public void Integer_isEven() {
