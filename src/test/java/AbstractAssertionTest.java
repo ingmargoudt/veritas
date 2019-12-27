@@ -7,6 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AbstractAssertionTest {
+
+    private final Integer nullInteger = null;
+
     @Test
     public void isEqualTo() {
         assertThat(3).isEqualTo(3);
@@ -32,7 +35,7 @@ public class AbstractAssertionTest {
 
     @Test
     public void isNull(){
-        assertThat(null).isNull();
+        assertThat(nullInteger).isNull();
     }
 
     @Test
@@ -47,7 +50,7 @@ public class AbstractAssertionTest {
 
     @Test
     public void notIsNotNull(){
-        assertThrows(AssertionError.class, () -> assertThat(null).isNotNull());
+        assertThrows(AssertionError.class, () -> assertThat(nullInteger).isNotNull());
     }
 
 
