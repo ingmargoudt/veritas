@@ -121,11 +121,12 @@ abstract class AbstractAssertion<
     }
 
     public SELF_TYPE test(Predicate<ELEMENT_TYPE> predicate, String errorMessage, Object ... vargs){
+        checkIfActualNull();
         if(predicate.test(actual)){
             reportSuccess();
             return self();
         }
-        throw new AssertionError(String.format(errorMessage, vargs));
+        return fail(errorMessage, vargs);
     }
 
 }
