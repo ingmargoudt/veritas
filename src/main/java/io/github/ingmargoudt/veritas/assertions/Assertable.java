@@ -9,4 +9,8 @@ public interface Assertable<SELF_TYPE extends Assertable<SELF_TYPE, ELEMENT_TYPE
     SELF_TYPE isNull();
 
     SELF_TYPE isNotNull();
+
+    SELF_TYPE isSameAs(ELEMENT_TYPE other);
+
+    SELF_TYPE isNotSameAs(ELEMENT_TYPE other);
 }

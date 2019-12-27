@@ -71,6 +71,24 @@ abstract class AbstractAssertion<
 
     }
 
+    public SELF_TYPE isSameAs(ELEMENT_TYPE expected) {
+        if (actual == expected) {
+            reportSuccess();
+            return self();
+        }
+        return fail("Expected %s to be the same reference to %s", actual, expected);
+
+    }
+
+    public SELF_TYPE isNotSameAs(ELEMENT_TYPE expected) {
+        if (actual != expected) {
+            reportSuccess();
+            return self();
+        }
+        return fail("Expected %s to be a different reference to %s", actual, expected);
+
+    }
+
     public void checkIfActualNull() {
         if (actual == null) {
             throw new AssertionError("Actual is null");

@@ -68,4 +68,32 @@ public class AbstractAssertionTest {
         assertEquals("fail", fail.getCustomErrorMessage());
         assertThrows(AssertionError.class, () -> fail.isEqualTo(4));
     }
+
+    @Test
+    public void isSameAs(){
+        int a = 3;
+        int b = a;
+        assertThat(a).isSameAs(b);
+    }
+
+    @Test
+    public void isNotSameAs(){
+        int a = 3;
+        int b = 4;
+        assertThat(a).isNotSameAs(b);
+    }
+
+    @Test
+    public void notIsSameAs(){
+        int a = 3;
+        int b = 4;
+        assertThrows(AssertionError.class, () -> assertThat(a).isSameAs(b));
+    }
+
+    @Test
+    public void notIsNotSameAs(){
+        int a = 3;
+        int b = a;
+        assertThrows(AssertionError.class, () -> assertThat(a).isNotSameAs(b));
+    }
 }
