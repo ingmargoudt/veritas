@@ -3,6 +3,7 @@ package io.github.ingmargoudt.veritas;
 import io.github.ingmargoudt.veritas.assertions.BooleanAssertion;
 import io.github.ingmargoudt.veritas.assertions.IntegerAssertion;
 import io.github.ingmargoudt.veritas.assertions.LongAssertion;
+import io.github.ingmargoudt.veritas.assertions.StringAssertion;
 
 public class Veritas {
 
@@ -19,5 +20,10 @@ public class Veritas {
 
     public static LongAssertion assertThat(Long actual){
         return new LongAssertion(actual);
+    }
+
+
+    public static StringAssertion assertThat(String actual){
+        return new StringAssertion(actual);
     }
 }
