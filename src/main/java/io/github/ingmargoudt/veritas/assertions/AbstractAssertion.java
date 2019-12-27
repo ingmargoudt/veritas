@@ -3,6 +3,7 @@ package io.github.ingmargoudt.veritas.assertions;
 import io.github.ingmargoudt.veritas.Veritas;
 
 import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -99,6 +100,14 @@ abstract class AbstractAssertion<
         }
         return fail("Expected %s to be not equal to %s", actual, expected);
 
+    }
+
+    public boolean test(Predicate<ELEMENT_TYPE> predicate){
+        if(predicate.test(actual)){
+            reportSuccess();
+            return true;
+        }
+        return false;
     }
 
 }
