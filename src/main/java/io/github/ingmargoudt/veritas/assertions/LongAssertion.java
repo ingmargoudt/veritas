@@ -12,11 +12,7 @@ public class LongAssertion extends AbstractAssertion<LongAssertion, Long> implem
 
     public LongAssertion isEven() {
         checkIfActualNull();
-        if(test(n -> n % 2 == 0)){
-            return self();
-        }
-
-        return fail("Expected %s to be even, ", actual);
+        return test(n -> n % 2 == 0,"Expected %s to be even, ", actual);
     }
 
     public LongAssertion isOdd() {

@@ -102,12 +102,12 @@ abstract class AbstractAssertion<
 
     }
 
-    public boolean test(Predicate<ELEMENT_TYPE> predicate){
+    public SELF_TYPE test(Predicate<ELEMENT_TYPE> predicate, String errorMessage, Object ... vargs){
         if(predicate.test(actual)){
             reportSuccess();
-            return true;
+            return self();
         }
-        return false;
+        throw new AssertionError(String.format(errorMessage, vargs));
     }
 
 }
