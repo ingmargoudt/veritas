@@ -1,9 +1,6 @@
 package io.github.ingmargoudt.veritas;
 
-import io.github.ingmargoudt.veritas.assertions.BooleanAssertion;
-import io.github.ingmargoudt.veritas.assertions.IntegerAssertion;
-import io.github.ingmargoudt.veritas.assertions.LongAssertion;
-import io.github.ingmargoudt.veritas.assertions.StringAssertion;
+import io.github.ingmargoudt.veritas.assertions.*;
 
 public class Veritas {
 
@@ -26,4 +23,6 @@ public class Veritas {
     public static StringAssertion assertThat(String actual){
         return new StringAssertion(actual);
     }
+
+    public static EnumAssertion assertThat(Enum actual){ return new EnumAssertion(actual);}
 }
