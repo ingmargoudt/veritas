@@ -7,20 +7,10 @@ public class BooleanAssertion extends AbstractAssertion<BooleanAssertion, Boolea
     }
 
     public BooleanAssertion isTrue(){
-        checkIfActualNull();
-        if (actual) {
-            reportSuccess();
-            return self();
-        }
-        return fail("Expected %s to be true, ", actual);
+        return test(actual -> actual,"Expected %s to be true, ", actual);
     }
 
     public BooleanAssertion isFalse(){
-        checkIfActualNull();
-        if (!actual) {
-            reportSuccess();
-            return self();
-        }
-        return fail("Expected %s to be false, ", actual);
+        return test(actual -> !actual,"Expected %s to be false, ", actual);
     }
 }
