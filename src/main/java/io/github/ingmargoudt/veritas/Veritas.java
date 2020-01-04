@@ -2,6 +2,8 @@ package io.github.ingmargoudt.veritas;
 
 import io.github.ingmargoudt.veritas.assertions.*;
 
+import java.util.Collection;
+
 public class Veritas {
 
     public static boolean LOG_PASSED = false;
@@ -25,4 +27,8 @@ public class Veritas {
     }
 
     public static EnumAssertion assertThat(Enum actual){ return new EnumAssertion(actual);}
+
+    public static <T> CollectionAssertion<T> assertThat(Collection<T> actual){
+        return new CollectionAssertion<T>(actual);
+    }
 }
