@@ -14,4 +14,10 @@ public class CollectionAssertion<T> extends AbstractAssertion<CollectionAssertio
     public CollectionAssertion<T> hasSize(int size) {
         return test(actual -> actual.size() == size, "The expected size of this collection is %s", size);
     }
+
+    public CollectionAssertion<T> isEmpty(){
+        return test(Collection::isEmpty, "The collection is expected to be empty");
+    }
+
+
 }

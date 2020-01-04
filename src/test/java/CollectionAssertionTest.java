@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static io.github.ingmargoudt.veritas.Veritas.assertThat;
@@ -40,10 +41,17 @@ public class CollectionAssertionTest {
 
     @Test
     public void testSize(){
-        List<String> actual = new ArrayList<>();
+        Collection<String> actual = new ArrayList<>();
         actual.add("A");
         actual.add("B");
 
         assertThat(actual).hasSize(2);
+    }
+
+    @Test
+    public void testIsEmpty(){
+        Collection<String> actual = new ArrayList<>();
+
+        assertThat(actual).isEmpty();
     }
 }
