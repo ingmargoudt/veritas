@@ -31,4 +31,20 @@ public class StringAssertionTest {
     public void notStartsWith(){
         assertThrows(AssertionError.class, () -> assertThat("foo").startsWith("bar"));
     }
+
+
+    @Test
+    public void endsWith(){
+        assertThat("foo").endsWith("oo");
+    }
+
+    @Test
+    public void contains() {
+        assertThat("foobar").contains("oba");
+    }
+
+    @Test
+    public void equalsIgnoreCase(){
+        assertThat("foo").equalsIgnoreCase("FOO");
+    }
 }
