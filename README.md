@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 [![badge-jdk](https://img.shields.io/badge/jdk-8-green.svg)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ingmargoudt/veritas/badge.png)](https://maven-badges.herokuapp.com/maven-central/io.github.ingmargoudt/veritas/badge.png)
+[![codecov](https://codecov.io/gh/ingmargoudt/veritas/branch/master/graph/badge.svg)](https://codecov.io/gh/ingmargoudt/veritas)
 
 # Veritas
 Veritas is a fluent assertions library, inspired by the self-typing mechanism of AssertJ/Fest. 
