@@ -3,6 +3,7 @@ package io.github.ingmargoudt.veritas;
 import io.github.ingmargoudt.veritas.assertions.*;
 
 import java.util.Collection;
+import java.util.Map;
 
 public class Veritas {
 
@@ -30,5 +31,9 @@ public class Veritas {
 
     public static <T> CollectionAssertion<T> assertThat(Collection<T> actual){
         return new CollectionAssertion<T>(actual);
+    }
+
+    public static <K,V> MapAssertion<K,V> assertThat(Map<K,V> actual){
+        return new MapAssertion<K,V>(actual);
     }
 }
