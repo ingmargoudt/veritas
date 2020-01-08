@@ -66,7 +66,7 @@ public class IntAssertTest {
 
     @Test
     public void isSmallerThanNull() {
-        assertThrows(NullPointerException.class, () -> assertThat(10).isSmallerThan(nullInteger));
+        assertThrows(IllegalArgumentException.class, () -> assertThat(10).isSmallerThan(nullInteger));
     }
 
      /*
@@ -91,7 +91,7 @@ public class IntAssertTest {
 
     @Test
     public void isSmallerThanEqualToNull() {
-        assertThrows(NullPointerException.class, () -> assertThat(10).isSmallerThanOrEqual(nullInteger));
+        assertThrows(IllegalArgumentException.class, () -> assertThat(10).isSmallerThanOrEqual(nullInteger));
     }
 
      /*
@@ -116,7 +116,7 @@ public class IntAssertTest {
 
     @Test
     public void isGreaterThanNull() {
-        assertThrows(NullPointerException.class, () -> assertThat(3).isGreaterThan(nullInteger));
+        assertThrows(IllegalArgumentException.class, () -> assertThat(3).isGreaterThan(nullInteger));
     }
 
      /*
@@ -142,7 +142,7 @@ public class IntAssertTest {
 
     @Test
     public void isGreaterThanEqualToNull(){
-        assertThrows(NullPointerException.class, () -> assertThat(3).isGreaterThanOrEqual(nullInteger));
+        assertThrows(IllegalArgumentException.class, () -> assertThat(3).isGreaterThanOrEqual(nullInteger));
     }
 
      /*
@@ -172,12 +172,12 @@ public class IntAssertTest {
 
     @Test
     public void testInBetweenLowerNull() {
-        assertThrows(NullPointerException.class, () -> assertThat(1).isBetween(nullInteger, 10));
+        assertThrows(IllegalArgumentException.class, () -> assertThat(1).isBetween(nullInteger, 10));
     }
 
     @Test
     public void testInBetweenUpperNull() {
-        assertThrows(NullPointerException.class, () -> assertThat(2).isBetween(1, nullInteger));
+        assertThrows(IllegalArgumentException.class, () -> assertThat(2).isBetween(1, nullInteger));
     }
 
 
@@ -198,7 +198,7 @@ public class IntAssertTest {
 
     @Test
     public void testNullMultipleOf() {
-        assertThrows(NullPointerException.class, () -> assertThat(15).isMultipleOf(nullInteger));
+        assertThrows(IllegalArgumentException.class, () -> assertThat(15).isMultipleOf(nullInteger));
     }
 
     @Test

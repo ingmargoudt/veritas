@@ -129,4 +129,10 @@ abstract class AbstractAssertion<
         return fail(errorMessage, vargs);
     }
 
+    <T> void throwIfNull(T value, String message) {
+           if(value == null){
+               throw new IllegalArgumentException(message);
+           }
+    }
+
 }
