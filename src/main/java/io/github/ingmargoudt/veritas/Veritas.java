@@ -33,6 +33,10 @@ public class Veritas {
         return new CollectionAssertion<T>(actual);
     }
 
+    public static CharAssertion assertThat(Character actual){
+        return new CharAssertion(actual);
+    }
+
     public static <K,V> MapAssertion<K,V> assertThat(Map<K,V> actual){
         return new MapAssertion<K,V>(actual);
     }
