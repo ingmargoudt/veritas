@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import static io.github.ingmargoudt.veritas.Veritas.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CollectionAssertionTest {
 
@@ -46,6 +47,15 @@ public class CollectionAssertionTest {
         actual.add("B");
 
         assertThat(actual).hasSize(2);
+    }
+
+    @Test
+    public void testNotSize(){
+        Collection<String> actual = new ArrayList<>();
+        actual.add("A");
+        actual.add("B");
+
+        assertThrows(AssertionError.class, () ->assertThat(actual).hasSize(3));
     }
 
     @Test
