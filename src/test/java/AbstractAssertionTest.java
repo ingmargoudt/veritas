@@ -56,7 +56,6 @@ public class AbstractAssertionTest {
 
     @Test
     public void customMessage() {
-        Veritas.LOG_PASSED = true;
         IntegerAssertion success = assertThat(3).onSucces("success");
         assertEquals("success", success.getCustomPassMessage());
         success.isEqualTo(3);

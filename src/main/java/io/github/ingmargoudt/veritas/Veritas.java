@@ -7,9 +7,6 @@ import java.util.Map;
 
 public class Veritas {
 
-    public static boolean LOG_PASSED = false;
-
-
     public static IntegerAssertion assertThat(Integer actual){
        return new IntegerAssertion(actual);
     }

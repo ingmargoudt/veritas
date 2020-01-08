@@ -1,7 +1,5 @@
 package io.github.ingmargoudt.veritas.assertions;
 
-import io.github.ingmargoudt.veritas.Veritas;
-
 import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.logging.Level;
@@ -42,9 +40,10 @@ abstract class AbstractAssertion<
     }
 
     protected void reportSuccess() {
-        if (Veritas.LOG_PASSED && !customPassMessage.isEmpty()) {
+        if(!customPassMessage.isEmpty()) {
             logger.log(Level.INFO, customPassMessage);
         }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -95,16 +94,16 @@ abstract class AbstractAssertion<
         }
     }
 
-    public SELF_TYPE isNull(){
-        if(actual == null){
+    public SELF_TYPE isNull() {
+        if (actual == null) {
             reportSuccess();
             return self();
         }
         return fail("Expected %s to be null", actual);
     }
 
-    public SELF_TYPE isNotNull(){
-        if(actual != null){
+    public SELF_TYPE isNotNull() {
+        if (actual != null) {
             reportSuccess();
             return self();
         }
@@ -120,9 +119,9 @@ abstract class AbstractAssertion<
 
     }
 
-    public SELF_TYPE test(Predicate<ELEMENT_TYPE> predicate, String errorMessage, Object ... vargs){
+    public SELF_TYPE test(Predicate<ELEMENT_TYPE> predicate, String errorMessage, Object... vargs) {
         checkIfActualNull();
-        if(predicate.test(actual)){
+        if (predicate.test(actual)) {
             reportSuccess();
             return self();
         }
@@ -130,9 +129,9 @@ abstract class AbstractAssertion<
     }
 
     <T> void throwIfNull(T value, String message) {
-           if(value == null){
-               throw new IllegalArgumentException(message);
-           }
+        if (value == null) {
+            throw new IllegalArgumentException(message);
+        }
     }
 
 }
