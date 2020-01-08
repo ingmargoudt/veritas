@@ -5,7 +5,7 @@ dist: trusty
 
 addons:
   sonarcloud:
-    organization: "ingmargoudt" # the key of the org you chose at step #3
+    organization: "ingmargoudt-github" # the key of the org you chose at step #3
     
 script:
   # JaCoCo is used to have code coverage, "-Pcoverage" activates the maven profile in the pom.xml
