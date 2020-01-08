@@ -155,9 +155,16 @@ public class LongAssertTest {
     }
 
     @Test
-    public void isNotBetween() {
+    public void isNotBetweenLow() {
         assertThrows(AssertionError.class, () -> assertThat(3L).isBetween(4L, 5L));
     }
+
+    @Test
+    public void isNotBetweenHigh() {
+        assertThrows(AssertionError.class, () -> assertThat(6L).isBetween(4L, 5L));
+    }
+
+
 
     @Test
     public void testInBetweenActualNull() {

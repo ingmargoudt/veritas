@@ -155,9 +155,15 @@ public class IntAssertTest {
     }
 
     @Test
-    public void isNotBetween() {
+    public void isNotBetweenLow() {
         assertThrows(AssertionError.class, () -> assertThat(3).isBetween(4, 5));
     }
+
+    @Test
+    public void isNotBetweenHigh() {
+        assertThrows(AssertionError.class, () -> assertThat(6).isBetween(4, 5));
+    }
+
 
     @Test
     public void testInBetweenActualNull() {
@@ -173,6 +179,7 @@ public class IntAssertTest {
     public void testInBetweenUpperNull() {
         assertThrows(NullPointerException.class, () -> assertThat(2).isBetween(1, nullInteger));
     }
+
 
      /*
     Tests for IntegerAssertion.isMultipleOf
