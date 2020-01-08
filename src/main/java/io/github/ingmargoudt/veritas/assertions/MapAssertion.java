@@ -8,7 +8,15 @@ public class MapAssertion<K,V> extends AbstractAssertion<MapAssertion<K,V>, Map<
         super(actual);
     }
 
-    public <K> MapAssertion containsKey(K key) {
+    public MapAssertion containsKey(K key) {
         return test(actual -> actual.containsKey(key),"Key %s not found in the map",key);
+    }
+
+    public MapAssertion isEmpty(){
+        return test(Map::isEmpty, "Map is expected to be empty");
+    }
+
+    public MapAssertion containsValue(V value) {
+        return test(actual -> actual.containsValue(value),"Value %s not found in the map",value);
     }
 }
