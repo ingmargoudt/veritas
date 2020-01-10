@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/ingmargoudt/veritas.svg?branch=master)](https://travis-ci.org/ingmargoudt/veritas) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 [![badge-jdk](https://img.shields.io/badge/jdk-8-green.svg)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ingmargoudt/veritas/badge.png)](https://maven-badges.herokuapp.com/maven-central/io.github.ingmargoudt/veritas/badge.png)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ingmargoudt/veritas/badge.png)](https://mvnrepository.com/artifact/io.github.ingmargoudt/veritas)
 [![codecov](https://codecov.io/gh/ingmargoudt/veritas/branch/master/graph/badge.svg)](https://codecov.io/gh/ingmargoudt/veritas)
 
 # Veritas
