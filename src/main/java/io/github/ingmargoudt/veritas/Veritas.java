@@ -7,6 +7,8 @@ import java.util.Map;
 
 public class Veritas {
 
+    private Veritas(){}
+
     public static IntegerAssertion assertThat(Integer actual){
        return new IntegerAssertion(actual);
     }
@@ -27,7 +29,7 @@ public class Veritas {
     public static EnumAssertion assertThat(Enum actual){ return new EnumAssertion(actual);}
 
     public static <T> CollectionAssertion<T> assertThat(Collection<T> actual){
-        return new CollectionAssertion<T>(actual);
+        return new CollectionAssertion<>(actual);
     }
 
     public static CharAssertion assertThat(Character actual){
@@ -35,7 +37,7 @@ public class Veritas {
     }
 
     public static <K,V> MapAssertion<K,V> assertThat(Map<K,V> actual){
-        return new MapAssertion<K,V>(actual);
+        return new MapAssertion<>(actual);
     }
 
     public static DoubleAssertion assertThat(Double actual) { return new DoubleAssertion(actual);}

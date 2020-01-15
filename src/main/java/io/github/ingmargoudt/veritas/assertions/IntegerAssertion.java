@@ -1,7 +1,5 @@
 package io.github.ingmargoudt.veritas.assertions;
 
-import java.util.logging.Logger;
-
 public class IntegerAssertion extends AbstractAssertion<IntegerAssertion, Integer> implements NumericAssertable<IntegerAssertion, Integer> {
 
     public IntegerAssertion(Integer actual) {

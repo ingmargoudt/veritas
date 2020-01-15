@@ -1,6 +1,5 @@
 package io.github.ingmargoudt.veritas.assertions;
 
-import java.util.Collection;
 import java.util.Map;
 
 public class MapAssertion<K,V> extends AbstractAssertion<MapAssertion<K,V>, Map<K,V>> {

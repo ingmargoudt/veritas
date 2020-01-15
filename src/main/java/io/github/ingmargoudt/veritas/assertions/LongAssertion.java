@@ -4,8 +4,6 @@ import java.util.logging.Logger;
 
 public class LongAssertion extends AbstractAssertion<LongAssertion, Long> implements NumericAssertable<LongAssertion, Long> {
 
-    private static final Logger logger = Logger.getLogger("LongAssertion");
-
     public LongAssertion(Long actual) {
         super(actual);
     }
