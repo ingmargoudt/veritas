@@ -56,7 +56,7 @@ public class LongAssertion extends AbstractAssertion<LongAssertion, Long> implem
         return test (actual ->actual >= lower && actual <= upper, "Expected %s to be between %s ", actual, lower, upper);
     }
 
-    public LongAssertion isMultipleOf(Long multiplicant) {
+    public LongAssertion isMultipleOf(Integer multiplicant) {
         if (multiplicant == null) {
             throw new NullPointerException("multiplicant can not be null");
         }

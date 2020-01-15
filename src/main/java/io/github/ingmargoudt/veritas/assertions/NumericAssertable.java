@@ -2,10 +2,6 @@ package io.github.ingmargoudt.veritas.assertions;
 
 public interface NumericAssertable<SELF_TYPE extends NumericAssertable<SELF_TYPE, ELEMENT_TYPE>, ELEMENT_TYPE> {
 
-    SELF_TYPE isEven();
-
-    SELF_TYPE isOdd();
-
     SELF_TYPE isSmallerThan(ELEMENT_TYPE target);
 
     SELF_TYPE isSmallerThanOrEqual(ELEMENT_TYPE target);
@@ -16,5 +12,4 @@ public interface NumericAssertable<SELF_TYPE extends NumericAssertable<SELF_TYPE
 
     SELF_TYPE isBetween(ELEMENT_TYPE lower, ELEMENT_TYPE upper);
 
-    SELF_TYPE isMultipleOf(ELEMENT_TYPE multiplicant);
 }

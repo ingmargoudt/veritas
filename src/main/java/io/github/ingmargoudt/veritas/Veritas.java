@@ -37,4 +37,7 @@ public class Veritas {
     public static <K,V> MapAssertion<K,V> assertThat(Map<K,V> actual){
         return new MapAssertion<K,V>(actual);
     }
+
+    public static DoubleAssertion assertThat(Double actual) { return new DoubleAssertion(actual);}
+
 }

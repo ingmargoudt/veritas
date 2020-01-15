@@ -4,8 +4,6 @@ import java.util.logging.Logger;
 
 public class IntegerAssertion extends AbstractAssertion<IntegerAssertion, Integer> implements NumericAssertable<IntegerAssertion, Integer> {
 
-    private static final Logger logger = Logger.getLogger("IntAssertion");
-
     public IntegerAssertion(Integer actual) {
         super(actual);
     }
@@ -43,7 +41,7 @@ public class IntegerAssertion extends AbstractAssertion<IntegerAssertion, Intege
         throwIfNull(lower, "Lower bound can not be null");
         throwIfNull(upper, "Upper bound can not be null");
 
-        return test(actual -> actual >= lower && actual <= upper, "Expected %s to be between %s ", actual, lower, upper);
+        return test(actual -> actual >= lower && actual <= upper, "Expected %s to be between %s and %s", actual, lower, upper);
     }
 
     public IntegerAssertion isMultipleOf(Integer multiplicant) {

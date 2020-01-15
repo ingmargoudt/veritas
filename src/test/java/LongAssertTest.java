@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class LongAssertTest {
 
     private final Long nullLong = null;
+    private final Integer nullInt = null;
 
 
     /*
@@ -187,23 +188,23 @@ public class LongAssertTest {
 
     @Test
     public void isMultipleOf() {
-        assertThat(15L).isMultipleOf(3L);
+        assertThat(15L).isMultipleOf(3);
     }
 
     @Test
     public void isNotMultipleOf() {
-        assertThrows(AssertionError.class, () -> assertThat(15L).isMultipleOf(4L));
+        assertThrows(AssertionError.class, () -> assertThat(15L).isMultipleOf(4));
     }
 
 
     @Test
     public void testNullMultipleOf() {
-        assertThrows(NullPointerException.class, () -> assertThat(15L).isMultipleOf(nullLong));
+        assertThrows(NullPointerException.class, () -> assertThat(15L).isMultipleOf(nullInt));
     }
 
     @Test
     public void testMultipleOfActualNull() {
-        assertThrows(AssertionError.class, () -> assertThat(nullLong).isMultipleOf(10L));
+        assertThrows(AssertionError.class, () -> assertThat(nullLong).isMultipleOf(10));
     }
 
 }
