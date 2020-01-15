@@ -24,8 +24,18 @@ public class DoubleAssertionTest {
     }
 
     @Test
+    public void notSmallerThanEqual(){
+        assertThrows(AssertionError.class, () -> assertThat(4.03).isSmallerThanOrEqual(4.02));
+    }
+
+    @Test
     public void greaterThan(){
         assertThat(0.8).isGreaterThan(0.7);
+    }
+
+    @Test
+    public void notGreaterThan(){
+        assertThrows(AssertionError.class, () -> assertThat(0.8).isGreaterThan(0.8));
     }
 
     @Test
@@ -34,8 +44,26 @@ public class DoubleAssertionTest {
         assertThat(4.02).isGreaterThanOrEqual(4.02);
     }
 
+
+    @Test
+    public void notGreaterThanOrEquals(){
+        assertThrows(AssertionError.class, () -> assertThat(0.7).isGreaterThanOrEqual(0.71));
+    }
+
     @Test
     public void inBetween(){
         assertThat(4.02).isBetween(4.01, 4.03);
     }
+
+    @Test
+    public void isNotBetweenLow() {
+        assertThrows(AssertionError.class, () -> assertThat(4.01).isBetween(4.02, 4.03));
+    }
+
+    @Test
+    public void isNotBetweenHigh() {
+        assertThrows(AssertionError.class, () -> assertThat(4.03).isBetween(4.01, 4.02));
+    }
+
+
 }
