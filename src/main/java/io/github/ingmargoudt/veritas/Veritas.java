@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Optional;
 
 public class Veritas {
 
@@ -50,5 +51,9 @@ public class Veritas {
 
     public static BigDecimalAssertion assertThat(BigDecimal actual){
         return new BigDecimalAssertion(actual);
+    }
+
+    public static <T> OptionalAssertion<T> assertThat(Optional<T> actual){
+        return new OptionalAssertion<>(actual);
     }
 }
