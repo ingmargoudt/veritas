@@ -45,6 +45,9 @@ public class Veritas {
 
     public static DoubleAssertion assertThat(Double actual) { return new DoubleAssertion(actual);}
 
+
+    public static FloatAssertion assertThat(Float actual) { return new FloatAssertion(actual);}
+
     public static BigIntegerAssertion assertThat(BigInteger actual){
         return new BigIntegerAssertion(actual);
     }
