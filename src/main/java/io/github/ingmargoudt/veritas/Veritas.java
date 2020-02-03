@@ -2,6 +2,7 @@ package io.github.ingmargoudt.veritas;
 
 import io.github.ingmargoudt.veritas.assertions.*;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Map;
@@ -45,5 +46,9 @@ public class Veritas {
 
     public static BigIntegerAssertion assertThat(BigInteger actual){
         return new BigIntegerAssertion(actual);
+    }
+
+    public static BigDecimalAssertion assertThat(BigDecimal actual){
+        return new BigDecimalAssertion(actual);
     }
 }
