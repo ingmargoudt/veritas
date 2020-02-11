@@ -5,6 +5,7 @@ import io.github.ingmargoudt.veritas.assertions.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Optional;
 
@@ -58,5 +59,13 @@ public class Veritas {
 
     public static <T> OptionalAssertion<T> assertThat(Optional<T> actual){
         return new OptionalAssertion<>(actual);
+    }
+
+
+    public static <T> IterableAssertion<T> assertThat(Iterable<T> actual){
+        return new IterableAssertion<>(actual);
+    }
+    public static <T> IteratorAssertion<T> assertThat(Iterator<T> actual){
+        return new IteratorAssertion<>(actual);
     }
 }
