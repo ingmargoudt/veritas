@@ -62,6 +62,9 @@ public class Veritas {
         return new OptionalAssertion<>(actual);
     }
 
+    public static ByteAssertion assertThat(Byte actual){
+        return new ByteAssertion(actual);
+    }
 
     public static <T> IterableAssertion<T> assertThat(Iterable<T> actual){
         return new IterableAssertion<>(actual);
