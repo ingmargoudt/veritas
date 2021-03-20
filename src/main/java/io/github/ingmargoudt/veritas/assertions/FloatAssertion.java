@@ -36,7 +36,7 @@ public class FloatAssertion extends AbstractAssertion<FloatAssertion, Float> imp
     @Override
     public FloatAssertion isBetween(Float lower, Float upper) {
         throwIfNull(lower, "in a <= x <= b, a can not be null");
-        throwIfNull(lower, "in a <= x <= b, b can not be null");
+        throwIfNull(upper, "in a <= x <= b, b can not be null");
         return test(actual -> Float.compare(actual, lower) >= 0 && Float.compare(actual, upper) <= 0, "Expected %s to be between %s and %s", actual, lower, upper);
     }
 }

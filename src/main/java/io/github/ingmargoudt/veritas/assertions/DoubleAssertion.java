@@ -36,7 +36,7 @@ public class DoubleAssertion extends AbstractAssertion<DoubleAssertion, Double> 
     @Override
     public DoubleAssertion isBetween(Double lower, Double upper) {
         throwIfNull(lower, "in a <= x <= b, a can not be null");
-        throwIfNull(lower, "in a <= x <= b, b can not be null");
+        throwIfNull(upper, "in a <= x <= b, b can not be null");
         return test(actual -> Double.compare(actual, lower) >= 0 && Double.compare(actual, upper) <= 0, "Expected %s to be between %s and %s", actual, lower, upper);
     }
 }
