@@ -1,4 +1,6 @@
-package io.github.ingmargoudt.veritas.assertions;
+package io.github.ingmargoudt.veritas.assertions.primitives;
+
+import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
 
 public class CharAssertion extends AbstractAssertion<CharAssertion, Character> {
     public CharAssertion(Character actual) {

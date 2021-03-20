@@ -1,6 +1,8 @@
-package io.github.ingmargoudt.veritas.assertions;
+package io.github.ingmargoudt.veritas.assertions.primitives;
 
-public class BooleanAssertion extends AbstractAssertion<BooleanAssertion, Boolean>  {
+import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
+
+public class BooleanAssertion extends AbstractAssertion<BooleanAssertion, Boolean> {
 
     public BooleanAssertion(Boolean actual) {
         super(actual);

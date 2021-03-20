@@ -1,6 +1,7 @@
-package io.github.ingmargoudt.veritas.assertions;
+package io.github.ingmargoudt.veritas.assertions.primitives;
 
-import java.util.logging.Logger;
+import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
+import io.github.ingmargoudt.veritas.assertions.NumericAssertable;
 
 public class LongAssertion extends AbstractAssertion<LongAssertion, Long> implements NumericAssertable<LongAssertion, Long> {
 

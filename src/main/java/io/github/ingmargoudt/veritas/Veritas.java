@@ -1,6 +1,7 @@
 package io.github.ingmargoudt.veritas;
 
 import io.github.ingmargoudt.veritas.assertions.*;
+import io.github.ingmargoudt.veritas.assertions.primitives.*;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

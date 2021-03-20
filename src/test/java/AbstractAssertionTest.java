@@ -1,5 +1,4 @@
-import io.github.ingmargoudt.veritas.Veritas;
-import io.github.ingmargoudt.veritas.assertions.IntegerAssertion;
+import io.github.ingmargoudt.veritas.assertions.primitives.IntegerAssertion;
 import org.junit.jupiter.api.Test;
 
 import static io.github.ingmargoudt.veritas.Veritas.assertThat;

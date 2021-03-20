@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-abstract class AbstractAssertion<
+public abstract class AbstractAssertion<
         SELF_TYPE extends AbstractAssertion<SELF_TYPE, ELEMENT_TYPE>,
         ELEMENT_TYPE
         > implements Assertable<SELF_TYPE, ELEMENT_TYPE> {
@@ -128,7 +128,7 @@ abstract class AbstractAssertion<
         return fail(errorMessage, vargs);
     }
 
-    <T> void throwIfNull(T value, String message) {
+    protected <T> void throwIfNull(T value, String message) {
         if (value == null) {
             throw new IllegalArgumentException(message);
         }
