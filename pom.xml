@@ -49,8 +49,8 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:git://github.com/ingmargoudt/veritas.git</connection>
-        <developerConnection>scm:git:git@github.com:ingmargoudt/veritas.git</developerConnection>
+        <connection>scm:git:https://github.com/ingmargoudt/veritas.git</connection>
+        <developerConnection>scm:git:https@github.com:ingmargoudt/veritas.git</developerConnection>
         <url>https://github.com/ingmargoudt/veritas</url>
     </scm>
 
