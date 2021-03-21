@@ -50,7 +50,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/ingmargoudt/veritas.git</connection>
-        <developerConnection>scm:git:https@github.com:ingmargoudt/veritas.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/ingmargoudt/veritas.git</developerConnection>
         <url>https://github.com/ingmargoudt/veritas</url>
     </scm>
 
