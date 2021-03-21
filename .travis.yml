@@ -3,18 +3,18 @@ jdk:
 - oraclejdk8
 dist: trusty
 
-addons:
-  sonarcloud:
-    organization: "ingmargoudt-github" # the key of the org you chose at step #3
+#addons:
+#  sonarcloud:
+#    organization: "ingmargoudt-github" # the key of the org you chose at step #3
     
 script:
   # JaCoCo is used to have code coverage, "-Pcoverage" activates the maven profile in the pom.xml
-  - mvn clean verify sonar:sonar -Pcoverage 
+  - mvn clean verify -Pcoverage
 
 cache:
   directories:
     - '$HOME/.m2/repository'
-    - '$HOME/.sonar/cache'
+#    - '$HOME/.sonar/cache'
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
