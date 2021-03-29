@@ -1,4 +1,7 @@
-package io.github.ingmargoudt.veritas.assertions;
+package io.github.ingmargoudt.veritas.assertions.primitives;
+
+import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
+import io.github.ingmargoudt.veritas.assertions.NumericAssertable;
 
 public class DoubleAssertion extends AbstractAssertion<DoubleAssertion, Double> implements NumericAssertable<DoubleAssertion, Double> {
 
