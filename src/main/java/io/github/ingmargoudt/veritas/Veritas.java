@@ -1,6 +1,10 @@
 package io.github.ingmargoudt.veritas;
 
 import io.github.ingmargoudt.veritas.assertions.*;
+import io.github.ingmargoudt.veritas.assertions.collections.CollectionAssertion;
+import io.github.ingmargoudt.veritas.assertions.collections.IterableAssertion;
+import io.github.ingmargoudt.veritas.assertions.collections.IteratorAssertion;
+import io.github.ingmargoudt.veritas.assertions.collections.MapAssertion;
 import io.github.ingmargoudt.veritas.assertions.primitives.*;
 
 import java.math.BigDecimal;

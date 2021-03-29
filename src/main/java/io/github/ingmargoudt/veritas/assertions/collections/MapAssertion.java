@@ -1,4 +1,6 @@
-package io.github.ingmargoudt.veritas.assertions;
+package io.github.ingmargoudt.veritas.assertions.collections;
+
+import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
 
 import java.util.Map;
 

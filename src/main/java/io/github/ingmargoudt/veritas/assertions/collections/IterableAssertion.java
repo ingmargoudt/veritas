@@ -1,4 +1,6 @@
-package io.github.ingmargoudt.veritas.assertions;
+package io.github.ingmargoudt.veritas.assertions.collections;
+
+import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
 
 public class IterableAssertion<T> extends AbstractAssertion<IterableAssertion<T>, Iterable<T>> {
     public IterableAssertion(Iterable<T> actual) {
