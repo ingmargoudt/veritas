@@ -39,7 +39,7 @@ public abstract class AbstractAssertion<
         }
     }
 
-    protected void reportSuccess() {
+    private void reportSuccess() {
         if(!customPassMessage.isEmpty()) {
             logger.log(Level.INFO, customPassMessage);
         }
