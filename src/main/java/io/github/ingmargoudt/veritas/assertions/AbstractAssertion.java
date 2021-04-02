@@ -34,7 +34,6 @@ public abstract class AbstractAssertion<
         if (!customErrorMessage.isEmpty()) {
             throw new AssertionError(customErrorMessage);
         } else {
-            logger.log(Level.WARNING, String.format(failMessage, args));
             throw new AssertionError(String.format(failMessage, args));
         }
     }
