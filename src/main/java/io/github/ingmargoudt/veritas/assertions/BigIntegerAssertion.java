@@ -2,7 +2,7 @@ package io.github.ingmargoudt.veritas.assertions;
 
 import java.math.BigInteger;
 
-public class BigIntegerAssertion extends AbstractAssertion<BigIntegerAssertion, BigInteger> implements NumericAssertable<BigIntegerAssertion, BigInteger> {
+public class BigIntegerAssertion extends AbstractAssertion<BigIntegerAssertion, BigInteger> implements NaturalNumberAssertable<BigIntegerAssertion, BigInteger> {
 
 
     public BigIntegerAssertion(BigInteger actual) {

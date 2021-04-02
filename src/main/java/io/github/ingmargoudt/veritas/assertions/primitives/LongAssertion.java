@@ -1,9 +1,10 @@
 package io.github.ingmargoudt.veritas.assertions.primitives;
 
 import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
+import io.github.ingmargoudt.veritas.assertions.NaturalNumberAssertable;
 import io.github.ingmargoudt.veritas.assertions.NumericAssertable;
 
-public class LongAssertion extends AbstractAssertion<LongAssertion, Long> implements NumericAssertable<LongAssertion, Long> {
+public class LongAssertion extends AbstractAssertion<LongAssertion, Long> implements NaturalNumberAssertable<LongAssertion, Long> {
 
     public LongAssertion(Long actual) {
         super(actual);
