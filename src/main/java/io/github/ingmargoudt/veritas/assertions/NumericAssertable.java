@@ -12,4 +12,6 @@ public interface NumericAssertable<SELF_TYPE extends NumericAssertable<SELF_TYPE
 
     SELF_TYPE isBetween(ELEMENT_TYPE lower, ELEMENT_TYPE upper);
 
+    SELF_TYPE isPositive();
+
 }

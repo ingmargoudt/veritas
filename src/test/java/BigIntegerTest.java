@@ -93,4 +93,16 @@ public class BigIntegerTest {
         BigInteger b3 = new BigInteger("3000000000000003");
         assertThrows(AssertionError.class, () -> assertThat(b3).isBetween(b1, b2));
     }
+
+    @Test
+    public void isPositive(){
+        BigInteger positiveBigInteger = new BigInteger("10");
+        assertThat(positiveBigInteger).isPositive();
+    }
+
+    @Test
+    public void notIsPositive(){
+        BigInteger positiveBigInteger = new BigInteger("-110");
+        assertThrows(AssertionError.class, () -> assertThat(positiveBigInteger).isPositive());
+    }
 }

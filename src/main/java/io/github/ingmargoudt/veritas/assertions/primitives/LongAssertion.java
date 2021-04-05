@@ -61,4 +61,9 @@ public class LongAssertion extends AbstractAssertion<LongAssertion, Long> implem
         }
         return test (actual ->actual % multiplicant == 0,"Expected %s to be a multiple of %s ", actual, multiplicant);
     }
+
+    @Override
+    public LongAssertion isPositive() {
+        return test(actual -> actual > 0, "Expected long %s to be positive", actual);
+    }
 }

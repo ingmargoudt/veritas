@@ -3,8 +3,7 @@ package io.github.ingmargoudt.veritas.assertions;
 import java.math.BigDecimal;
 
 public class BigDecimalAssertion extends AbstractAssertion<BigDecimalAssertion, BigDecimal> implements NumericAssertable<BigDecimalAssertion, BigDecimal> {
-
-
+    
     public BigDecimalAssertion(BigDecimal actual) {
         super(actual);
     }
@@ -38,5 +37,10 @@ public class BigDecimalAssertion extends AbstractAssertion<BigDecimalAssertion, 
         throwIfNull(lower, "Lower bound can not be null");
         throwIfNull(upper, "Upper bound can not be null");
         return test(actual -> actual.compareTo(lower) >= 0 && actual.compareTo(upper) <= 0, "%s is not between %s and %s", actual, lower, upper);
+    }
+
+    @Override
+    public BigDecimalAssertion isPositive() {
+        return test(actual -> actual.compareTo(BigDecimal.ZERO) > 0, "BigDecimal %s expected to be positive",actual);
     }
 }

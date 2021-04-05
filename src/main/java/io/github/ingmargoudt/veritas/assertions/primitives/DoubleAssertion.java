@@ -42,6 +42,11 @@ public class DoubleAssertion extends AbstractAssertion<DoubleAssertion, Double> 
         throwIfNull(upper, "in a <= x <= b, b can not be null");
         return test(actual -> Double.compare(actual, lower) >= 0 && Double.compare(actual, upper) <= 0, "Expected %s to be between %s and %s", actual, lower, upper);
     }
+
+    @Override
+    public DoubleAssertion isPositive() {
+        return test(actual -> actual > 0.0, "Expected double %s to be positive", actual);
+    }
 }
 
 

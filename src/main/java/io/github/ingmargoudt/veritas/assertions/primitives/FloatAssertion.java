@@ -42,6 +42,11 @@ public class FloatAssertion extends AbstractAssertion<FloatAssertion, Float> imp
         throwIfNull(upper, "in a <= x <= b, b can not be null");
         return test(actual -> Float.compare(actual, lower) >= 0 && Float.compare(actual, upper) <= 0, "Expected %s to be between %s and %s", actual, lower, upper);
     }
+
+    @Override
+    public FloatAssertion isPositive() {
+        return test(actual -> actual > 0, "Float %s expected to be positive", actual);
+    }
 }
 
 

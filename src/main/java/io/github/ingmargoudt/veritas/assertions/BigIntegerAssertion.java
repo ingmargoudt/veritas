@@ -39,4 +39,9 @@ public class BigIntegerAssertion extends AbstractAssertion<BigIntegerAssertion, 
         throwIfNull(upper, "Upper bound can not be null");
         return test(actual -> actual.compareTo(lower) >= 0 && actual.compareTo(upper) <= 0, "%s is not between %s and %s", actual, lower, upper);
     }
+
+    @Override
+    public BigIntegerAssertion isPositive() {
+        return test(actual -> actual.compareTo(BigInteger.ZERO) > 0, "BigInteger %s is expected to be positive", actual);
+    }
 }

@@ -93,4 +93,16 @@ public class BigDecimalTest {
         BigDecimal b3 = new BigDecimal("300000000000000.3");
         assertThrows(AssertionError.class, () -> assertThat(b3).isBetween(b1, b2));
     }
+
+    @Test
+    public void isPositive(){
+        BigDecimal positiveBigDecimal = new BigDecimal("300000000000000.05");
+        assertThat(positiveBigDecimal).isPositive();
+    }
+
+    @Test
+    public void notIsPositive(){
+        BigDecimal positiveBigDecimal = new BigDecimal("-300000000000000.01");
+        assertThrows(AssertionError.class, () -> assertThat(positiveBigDecimal).isPositive());
+    }
 }

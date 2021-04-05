@@ -207,4 +207,16 @@ public class LongAssertTest {
         assertThrows(AssertionError.class, () -> assertThat(nullLong).isMultipleOf(10));
     }
 
+    @Test
+    public void isPositive(){
+        long y = 2L;
+        assertThat(y).isPositive();
+    }
+
+    @Test
+    public void notIsPositive(){
+        long y = -2L;
+        assertThrows(AssertionError.class, () -> assertThat(y).isPositive());
+    }
+
 }

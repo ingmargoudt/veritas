@@ -50,4 +50,9 @@ public class IntegerAssertion extends AbstractAssertion<IntegerAssertion, Intege
 
         return test(actual -> actual % multiplicant == 0, "Expected %s to be a multiple of %s ", actual, multiplicant);
     }
+
+    @Override
+    public IntegerAssertion isPositive() {
+       return test(actual -> actual > 0, "Expected %s to be > positive",actual);
+    }
 }

@@ -206,4 +206,16 @@ public class IntAssertTest {
         assertThrows(AssertionError.class, () -> assertThat(nullInteger).isMultipleOf(10));
     }
 
+    @Test
+    public void isPositive(){
+        int y = 2;
+        assertThat(y).isPositive();
+    }
+
+    @Test
+    public void notIsPositive(){
+        int y = -2;
+        assertThrows(AssertionError.class, () -> assertThat(y).isPositive());
+    }
+
 }

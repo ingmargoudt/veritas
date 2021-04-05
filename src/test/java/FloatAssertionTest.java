@@ -64,5 +64,17 @@ public class FloatAssertionTest {
         assertThrows(AssertionError.class, () -> assertThat(4.03F).isBetween(4.01F, 4.02F));
     }
 
+    @Test
+    public void isPositive(){
+        float y = 2.0f;
+        assertThat(y).isPositive();
+    }
+
+    @Test
+    public void notIsPositive(){
+        float y = -2.0f;
+        assertThrows(AssertionError.class, () -> assertThat(y).isPositive());
+    }
+
 
 }

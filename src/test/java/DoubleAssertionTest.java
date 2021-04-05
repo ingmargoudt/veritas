@@ -63,5 +63,17 @@ public class DoubleAssertionTest {
         assertThrows(AssertionError.class, () -> assertThat(4.03).isBetween(4.01, 4.02));
     }
 
+    @Test
+    public void isPositive(){
+        double y = 2.0;
+        assertThat(y).isPositive();
+    }
+
+    @Test
+    public void notIsPositive(){
+        double y = -2.0;
+        assertThrows(AssertionError.class, () -> assertThat(y).isPositive());
+    }
+
 
 }
