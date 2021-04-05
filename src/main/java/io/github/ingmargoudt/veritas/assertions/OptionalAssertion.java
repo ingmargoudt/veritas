@@ -8,11 +8,11 @@ public class OptionalAssertion<T>  extends AbstractAssertion<OptionalAssertion<T
         super(actual);
     }
 
-    public OptionalAssertion isPresent(){
+    public OptionalAssertion<T> isPresent(){
         return test(Optional::isPresent,"optional has no value");
     }
 
-    public OptionalAssertion isEmpty(){
+    public OptionalAssertion<T> isEmpty(){
         return test(actual -> !actual.isPresent(),"optional has a value ");
     }
 }

@@ -8,8 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MapAssertionTest {
 
-    private final Map nullMap = new HashMap<>();
-
     @Test
     public void containsKey() {
         Map<String, Integer> theMap = new HashMap<>();

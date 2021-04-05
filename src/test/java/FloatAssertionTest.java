@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class FloatAssertionTest {
 
-    private final Float nullFloat = null;
 
     @Test
     public void smallerThan(){

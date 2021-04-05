@@ -1,7 +1,6 @@
 package io.github.ingmargoudt.veritas.assertions;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 public class BigDecimalAssertion extends AbstractAssertion<BigDecimalAssertion, BigDecimal> implements NumericAssertable<BigDecimalAssertion, BigDecimal> {
 

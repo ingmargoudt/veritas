@@ -2,7 +2,6 @@ package io.github.ingmargoudt.veritas.assertions.primitives;
 
 import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
 import io.github.ingmargoudt.veritas.assertions.NaturalNumberAssertable;
-import io.github.ingmargoudt.veritas.assertions.NumericAssertable;
 
 public class IntegerAssertion extends AbstractAssertion<IntegerAssertion, Integer> implements NaturalNumberAssertable<IntegerAssertion, Integer> {
 

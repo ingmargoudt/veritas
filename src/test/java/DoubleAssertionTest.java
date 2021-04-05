@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DoubleAssertionTest {
 
-    private final Double nullDouble = null;
-
     @Test
     public void smallerThan(){
         assertThat(4.001).isSmallerThan(4.01);
