@@ -87,7 +87,7 @@ public abstract class AbstractAssertion<
 
     }
 
-    public void checkIfActualNull() {
+    private void checkIfActualNull() {
         if (actual == null) {
             throw new AssertionError("Actual is null");
         }
