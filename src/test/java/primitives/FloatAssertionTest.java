@@ -73,6 +73,11 @@ public class FloatAssertionTest {
     }
 
     @Test
+    public void zeroIsNotPositive() {
+        assertThrows(AssertionError.class, () -> assertThat(0.0f).isPositive());
+    }
+
+    @Test
     public void notIsPositive(){
         float y = -2.0f;
         assertThrows(AssertionError.class, () -> assertThat(y).isPositive());

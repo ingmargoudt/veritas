@@ -101,6 +101,12 @@ public class BigIntegerTest {
     }
 
     @Test
+    public void zeroIsNotPositive(){
+        BigInteger positiveBigInteger = new BigInteger("0");
+        assertThrows(AssertionError.class, () -> assertThat(positiveBigInteger).isPositive());
+    }
+
+    @Test
     public void notIsPositive(){
         BigInteger positiveBigInteger = new BigInteger("-110");
         assertThrows(AssertionError.class, () -> assertThat(positiveBigInteger).isPositive());

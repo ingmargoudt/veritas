@@ -215,6 +215,11 @@ public class IntAssertTest {
     }
 
     @Test
+    public void zeroIsNotPositive() {
+        assertThrows(AssertionError.class, () -> assertThat(0).isPositive());
+    }
+
+    @Test
     public void notIsPositive(){
         int y = -2;
         assertThrows(AssertionError.class, () -> assertThat(y).isPositive());

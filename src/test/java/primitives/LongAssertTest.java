@@ -216,6 +216,11 @@ public class LongAssertTest {
     }
 
     @Test
+    public void zeroIsNotPositive() {
+        assertThrows(AssertionError.class, () -> assertThat(0L).isPositive());
+    }
+
+    @Test
     public void notIsPositive(){
         long y = -2L;
         assertThrows(AssertionError.class, () -> assertThat(y).isPositive());

@@ -101,6 +101,12 @@ public class BigDecimalTest {
     }
 
     @Test
+    public void zeroIsNotPositive(){
+        BigDecimal positiveBigDecimal = new BigDecimal("0.0");
+        assertThrows(AssertionError.class, () -> assertThat(positiveBigDecimal).isPositive());
+    }
+
+    @Test
     public void notIsPositive(){
         BigDecimal positiveBigDecimal = new BigDecimal("-300000000000000.01");
         assertThrows(AssertionError.class, () -> assertThat(positiveBigDecimal).isPositive());

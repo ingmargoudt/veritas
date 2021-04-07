@@ -8,50 +8,50 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class DoubleAssertionTest {
 
     @Test
-    public void smallerThan(){
+    public void smallerThan() {
         assertThat(4.001).isSmallerThan(4.01);
     }
 
     @Test
-    public void notmallerThan(){
+    public void notmallerThan() {
         assertThrows(AssertionError.class, () -> assertThat(4.01).isSmallerThan(4.001));
     }
 
     @Test
-    public void smallerThanEqual(){
+    public void smallerThanEqual() {
         assertThat(4.01).isSmallerThanOrEqual(4.02);
         assertThat(4.01).isSmallerThanOrEqual(4.01);
     }
 
     @Test
-    public void notSmallerThanEqual(){
+    public void notSmallerThanEqual() {
         assertThrows(AssertionError.class, () -> assertThat(4.03).isSmallerThanOrEqual(4.02));
     }
 
     @Test
-    public void greaterThan(){
+    public void greaterThan() {
         assertThat(0.8).isGreaterThan(0.7);
     }
 
     @Test
-    public void notGreaterThan(){
+    public void notGreaterThan() {
         assertThrows(AssertionError.class, () -> assertThat(0.8).isGreaterThan(0.8));
     }
 
     @Test
-    public void greaterThanEqual(){
+    public void greaterThanEqual() {
         assertThat(4.02).isGreaterThanOrEqual(4.01);
         assertThat(4.02).isGreaterThanOrEqual(4.02);
     }
 
 
     @Test
-    public void notGreaterThanOrEquals(){
+    public void notGreaterThanOrEquals() {
         assertThrows(AssertionError.class, () -> assertThat(0.7).isGreaterThanOrEqual(0.71));
     }
 
     @Test
-    public void inBetween(){
+    public void inBetween() {
         assertThat(4.02).isBetween(4.01, 4.03);
     }
 
@@ -66,13 +66,18 @@ public class DoubleAssertionTest {
     }
 
     @Test
-    public void isPositive(){
+    public void isPositive() {
         double y = 2.0;
         assertThat(y).isPositive();
     }
 
     @Test
-    public void notIsPositive(){
+    public void zeroIsNotPositive() {
+        assertThrows(AssertionError.class, () -> assertThat(0.0).isPositive());
+    }
+
+    @Test
+    public void notIsPositive() {
         double y = -2.0;
         assertThrows(AssertionError.class, () -> assertThat(y).isPositive());
     }
