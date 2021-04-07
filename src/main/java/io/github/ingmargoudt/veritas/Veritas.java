@@ -51,6 +51,7 @@ public class Veritas {
 
     public static DoubleAssertion assertThat(Double actual) { return new DoubleAssertion(actual);}
 
+    public static ShortAssertion assertThat(Short actual) { return new ShortAssertion(actual);}
 
     public static FloatAssertion assertThat(Float actual) { return new FloatAssertion(actual);}
 

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static io.github.ingmargoudt.veritas.Veritas.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class IntAssertTest {
+public class IntegerAssertTest {
 
     private final Integer nullInteger = null;
 
