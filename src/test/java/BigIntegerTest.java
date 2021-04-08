@@ -129,4 +129,17 @@ public class BigIntegerTest {
         BigInteger oddBigInteger = new BigInteger("3");
         assertThrows(AssertionError.class, () -> assertThat(oddBigInteger).isEven());
     }
+
+    @Test
+    public void isOdd(){
+        BigInteger oddBigInteger = new BigInteger("3");
+        assertThat(oddBigInteger).isOdd();
+    }
+
+
+    @Test
+    public void notIsOdd(){
+        BigInteger evenBigInteger = new BigInteger("4");
+        assertThrows(AssertionError.class, () -> assertThat(evenBigInteger).isOdd());
+    }
 }

@@ -4,4 +4,6 @@ public interface NaturalNumberAssertable<SELF_TYPE extends NaturalNumberAssertab
 
     SELF_TYPE isEven();
 
+    SELF_TYPE isOdd();
+
 }

@@ -50,4 +50,10 @@ public class BigIntegerAssertion extends AbstractAssertion<BigIntegerAssertion, 
         BigInteger two = new BigInteger("2");
         return test(actual -> actual.mod(two).equals(BigInteger.ZERO),"BigInteger %s is expected to be even", actual);
     }
+
+    @Override
+    public BigIntegerAssertion isOdd() {
+        BigInteger two = new BigInteger("2");
+        return test(actual -> !actual.mod(two).equals(BigInteger.ZERO),"BigInteger %s is expected to be odd", actual);
+    }
 }
