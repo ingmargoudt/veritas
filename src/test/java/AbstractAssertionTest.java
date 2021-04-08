@@ -63,8 +63,12 @@ public class AbstractAssertionTest {
     @Test
     public void customErrorMessage() {
         IntegerAssertion fail = assertThat(3).onFail("fail");
-        assertEquals("fail", fail.getCustomErrorMessage());
-        assertThrows(AssertionError.class, () -> fail.isEqualTo(4));
+        try {
+            fail.isEqualTo(4);
+        }
+        catch (AssertionError error){
+            assertThat(error.getMessage()).isEqualTo("fail");
+        }
     }
 
     @Test

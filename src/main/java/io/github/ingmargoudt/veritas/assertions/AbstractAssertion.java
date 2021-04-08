@@ -19,10 +19,6 @@ public abstract class AbstractAssertion<
         this.actual = actual;
     }
 
-    public String getCustomErrorMessage() {
-        return customErrorMessage;
-    }
-
     public String getCustomPassMessage() {
         return customPassMessage;
     }
