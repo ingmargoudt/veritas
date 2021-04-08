@@ -1,6 +1,8 @@
-package io.github.ingmargoudt.veritas.assertions;
+package io.github.ingmargoudt.veritas.assertions.lang;
 
-public class StringAssertion extends AbstractAssertion<StringAssertion, String>  {
+import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
+
+public class StringAssertion extends AbstractAssertion<StringAssertion, String> {
     public StringAssertion(String actual) {
         super(actual);
     }

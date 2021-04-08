@@ -1,4 +1,7 @@
-package io.github.ingmargoudt.veritas.assertions;
+package io.github.ingmargoudt.veritas.assertions.math;
+
+import io.github.ingmargoudt.veritas.assertions.AbstractAssertion;
+import io.github.ingmargoudt.veritas.assertions.NaturalNumberAssertable;
 
 import java.math.BigInteger;
 

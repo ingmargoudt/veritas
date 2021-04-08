@@ -1,3 +1,5 @@
+package lang;
+
 import org.junit.jupiter.api.Test;
 
 import static io.github.ingmargoudt.veritas.Veritas.assertThat;
