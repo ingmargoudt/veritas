@@ -111,4 +111,22 @@ public class BigIntegerTest {
         BigInteger positiveBigInteger = new BigInteger("-110");
         assertThrows(AssertionError.class, () -> assertThat(positiveBigInteger).isPositive());
     }
+
+    @Test
+    public void isEven(){
+        BigInteger positiveBigInteger = new BigInteger("10");
+        assertThat(positiveBigInteger).isEven();
+    }
+
+    @Test
+    public void zeroIsEven(){
+        BigInteger zero = new BigInteger("0");
+        assertThat(zero).isEven();
+    }
+
+    @Test
+    public void notIsEven(){
+        BigInteger oddBigInteger = new BigInteger("3");
+        assertThrows(AssertionError.class, () -> assertThat(oddBigInteger).isEven());
+    }
 }
