@@ -10,6 +10,7 @@ public class ShortAssertTest {
     private final Short nullShort = null;
     private final Short three = (short) 3;
     private final Short four = (short) 4;
+    private final Short five = (short) 5;
 
 
     /*
@@ -127,12 +128,12 @@ public class ShortAssertTest {
 
     @Test
     public void isNotGreaterOrEqualTo() {
-        assertThrows(AssertionError.class, () -> assertThat((short) 3).isGreaterThanOrEqual((short) four));
+        assertThrows(AssertionError.class, () -> assertThat(three).isGreaterThanOrEqual(four));
     }
 
     @Test
     public void isGreaterThanEqualToNullActual() {
-        assertThrows(AssertionError.class, () -> assertThat(nullShort).isGreaterThanOrEqual((short) 5));
+        assertThrows(AssertionError.class, () -> assertThat(nullShort).isGreaterThanOrEqual(three));
     }
 
     @Test
@@ -143,7 +144,7 @@ public class ShortAssertTest {
 
     @Test
     public void isBetween() {
-        assertThat(four).isBetween(three, (short) 5);
+        assertThat(four).isBetween(three, five);
     }
 
     @Test
@@ -153,7 +154,7 @@ public class ShortAssertTest {
 
     @Test
     public void isNotBetweenHigh() {
-        assertThrows(AssertionError.class, () -> assertThat(6).isBetween(4, 5));
+        assertThrows(AssertionError.class, () -> assertThat(five).isBetween(three, four));
     }
 
 
@@ -174,7 +175,7 @@ public class ShortAssertTest {
 
     @Test
     public void isMultipleOf() {
-        assertThat(15).isMultipleOf(3);
+        assertThat((short)15).isMultipleOf(three);
     }
 
     @Test
@@ -195,18 +196,19 @@ public class ShortAssertTest {
 
     @Test
     public void isPositive() {
-        int y = (short) 2;
+        short y = 2;
         assertThat(y).isPositive();
     }
 
     @Test
     public void zeroIsNotPositive() {
-        assertThrows(AssertionError.class, () -> assertThat((short) 0).isPositive());
+        short zero = 0;
+        assertThrows(AssertionError.class, () -> assertThat(zero).isPositive());
     }
 
     @Test
     public void notIsPositive() {
-        int y = (short) -2;
+        short y =  -2;
         assertThrows(AssertionError.class, () -> assertThat(y).isPositive());
     }
 
